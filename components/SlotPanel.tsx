@@ -20,6 +20,7 @@ import type {
 type SideKey = "eL" | "eR" | "eT" | "eB";
 
 interface Props {
+  className?: string;
   state: ComposerState;
   index: number;
   onDraw: () => void;
@@ -28,6 +29,7 @@ interface Props {
 }
 
 export default function SlotPanel({
+  className,
   state,
   index,
   onDraw,
@@ -61,7 +63,7 @@ export default function SlotPanel({
   };
 
   return (
-    <>
+    <div className={className}>
       <h3 className="title">
         Photo {index + 1}
         {sl.img ? "" : " (empty)"}
@@ -230,6 +232,6 @@ export default function SlotPanel({
           </button>
         </div>
       </Section>
-    </>
+    </div>
   );
 }
