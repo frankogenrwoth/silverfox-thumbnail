@@ -1,0 +1,52 @@
+:root{--bg:#0e0f12;--panel:#16181d;--panel2:#1d2027;--line:#2a2e37;--txt:#e8eaee;--mute:#8a909c;--acc:#7c9cff;--acc2:#5b7bf0}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--txt);font:13px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;display:flex;flex-direction:column}
+header.top{display:flex;align-items:center;gap:14px;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line)}
+header h1{font-size:15px;margin:0;font-weight:650;letter-spacing:.2px}
+.spacer{flex:1}
+header label{display:flex;align-items:center;gap:6px;color:var(--mute)}
+.app{flex:1;min-height:0;display:grid;grid-template-columns:300px 1fr 320px;grid-template-areas:"left stage right"}
+aside{background:var(--panel);overflow-y:auto;padding:6px 14px 30px}
+#left{grid-area:left;border-right:1px solid var(--line)}
+#right{grid-area:right;border-left:1px solid var(--line)}
+#stage{grid-area:stage;display:flex;align-items:center;justify-content:center;padding:20px;min-width:0;min-height:0;background:
+ repeating-conic-gradient(#14161b 0% 25%,#101216 0% 50%) 0 0/24px 24px}
+#cv{max-width:100%;max-height:100%;box-shadow:0 10px 50px rgba(0,0,0,.6);cursor:default;touch-action:none}
+section{padding:12px 0;border-bottom:1px solid var(--line)}
+section:last-child{border-bottom:0}
+h2{font-size:11px;text-transform:uppercase;letter-spacing:1.1px;color:var(--mute);margin:0 0 10px;font-weight:650}
+h3.title{font-size:15px;margin:12px 0 0}
+.row{margin-bottom:9px}
+.row .lab{display:flex;justify-content:space-between;color:var(--mute);margin-bottom:3px}
+.row .lab .val{color:var(--txt);font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--acc);margin:0}
+input[type=number],select,textarea,input[type=text]{width:100%;background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit}
+textarea{resize:vertical;min-height:54px}
+input[type=color]{width:38px;height:26px;padding:0;border:1px solid var(--line);border-radius:6px;background:none;cursor:pointer}
+button{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:6px;padding:7px 11px;font:inherit;cursor:pointer}
+button:hover{border-color:#40465a}
+button.primary{background:var(--acc2);border-color:var(--acc2);color:#fff;font-weight:600}
+button.primary:hover{background:var(--acc)}
+button.wide{width:100%}
+button.danger:hover{border-color:#c0504d;color:#ff8f8b}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.seg{display:flex;gap:6px;margin-bottom:10px}
+.seg button{flex:1;font-size:15px;font-weight:600}
+.seg button.on{background:var(--acc2);border-color:var(--acc2);color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.two label{display:flex;align-items:center;gap:8px;color:var(--mute)}
+.inline{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;color:var(--mute)}
+.inline.chk{justify-content:flex-start;color:var(--txt)}
+.hint{color:var(--mute);font-size:12px;margin:6px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.chips button{padding:5px 9px;font-size:12px}
+.tl{display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.tl button{text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tl button.on{border-color:var(--acc);color:var(--acc)}
+@media (max-width:1000px){
+ .app{grid-template-columns:1fr;grid-template-areas:"stage" "left" "right";grid-template-rows:55vh auto auto;overflow-y:auto}
+ aside{overflow:visible}
+ body{overflow:auto;height:auto}
+ html{height:auto}
+}
